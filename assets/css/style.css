@@ -15,10 +15,10 @@ width: 66%;
 }
 .input-field {
     width: 100%;
-    height: 2em;
+    height: 5em;
     border: 1px solid white;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
 
 }
@@ -35,9 +35,10 @@ width: 66%;
 }
 .player-info {
 display: flex;
-justify-content: space-evenly;
-flex-grow: 1;
+justify-content: start;
+flex-basis: 1;
 border: 1px solid white;
+padding: 1em 1em;
 }
 .player-info h3 {
     color: white;
@@ -47,5 +48,10 @@ border: 1px solid white;
     height: 50vh;
     border: 1px solid white;
     color: white;
-    
+}
+#stats-container, #items-container, #interact-container {
+height: 15em;
+border: 1px solid white;
+width: 10em;
+
 }
