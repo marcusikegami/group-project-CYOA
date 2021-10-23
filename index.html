@@ -10,19 +10,26 @@
 </head>
 <body>
     <main class="main">
-        <div class="story-log">
-            story log
-        </div>
-        <div class="input-field">
+        <article id="log-wrapper">
+                <div class="story-log">
+                    
+                </div>
             
-            <textarea>text area</textarea>
-            
-        </div>
+            <div class="input-field">
+                <form>
+                <textarea type="text" id="text-input"></textarea>
+                </form>
+            </div>
+        </article>    
         <article class="player-info">
             <div class="stats">
                 <h3>STATS</h3>
                 <div id="stats-container">
-
+                    <p>Name: <span id="playerName"></span></p>
+                    <p>Class: <span id="playerClass"></span></p>
+                    <p>Health: <span id="playerHealth"></span>/100</p>
+                    <p>Defense: <span id="playerDefense"></span></p>
+                    <p>Credits: <span id="playerCredits"></span></p>
                 </div>
             </div>
             <div class="item">
