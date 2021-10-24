@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="./assets/css/style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+
     <title>Document</title>
 </head>
+
 <body>
-    <main class="main">
+
+    <main class="container">
         <article id="log-wrapper">
-                <div class="story-log">
-                    
-                </div>
-            
-            <div class="input-field">
-                <form>
-                <textarea type="text" id="text-input"></textarea>
+            <div class="story-log row">
+
+            </div>
+
+            <div class="row input-field">
+                <form class="col s12">
+                    <div class="row">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <textarea type="text" id="text-input"></textarea>
+                    </div>
                 </form>
             </div>
-        </article>    
-        <article class="player-info">
-            <div class="stats">
-                <h3>STATS</h3>
-                <div id="stats-container">
-                    <p>Name: <span id="playerName"></span></p>
-                    <p>Class: <span id="playerClass"></span></p>
-                    <p>Health: <span id="playerHealth"></span>/100</p>
-                    <p>Defense: <span id="playerDefense"></span></p>
-                    <p>Credits: <span id="playerCredits"></span></p>
+        </article>
+        <article class="player-info row">
+            <div class="col s12 m4">
+                <div class="card icon-block grey darken-4">
+                    <h2 class="center light-blue-text"><i class="medium material-icons">group</i></h2>
+                    <h5 class="center">STATS</h5>
+                    <div id="stats-container">
+                        <p>Name: <span id="playerName"></span></p>
+                        <p>Class: <span id="playerClass"></span></p>
+                        <p>Health: <span id="playerHealth"></span>/100</p>
+                        <p>Defense: <span id="playerDefense"></span></p>
+                        <p>Credits: <span id="playerCredits"></span></p>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <h3>ITEMS</h3>
-                <div id="items-container">
-                    
+            <div class="col s12 m4">
+                <div class="item card icon-block grey darken-4">
+                    <h2 class="center light-blue-text"><i class="medium material-icons">settings</i></h2>
+                    <h5 class="center">ITEMS</h5>
+                    <div id="items-container">
+                    </div>
                 </div>
             </div>
-            <div class="story-options">
-                <h3>INTERACT</h3>
-                <div id="interact-container">
-                    
+            <div class="col s12 m4">
+                <div class="story-options card icon-block grey darken-4">
+                    <h2 class="center light-blue-text"><i class="medium material-icons">transfer_within_a_station
+                    </i></h2>
+                    <h5 class="center">INTERACT</h5>
+                    <div id="interact-container">
+                    </div>
                 </div>
             </div>
         </article>
@@ -49,4 +68,5 @@
     </main>
     <script defer src='./assets/js/script.js'></script>
 </body>
+
 </html>

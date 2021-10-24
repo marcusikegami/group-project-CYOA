@@ -9,8 +9,6 @@ body {
 main {
 margin-left: auto;
 margin-right: auto;
-/* margin-top: 15%;
-margin-bottom: 50%; */
 width: 66%;
 }
 .input-field {
@@ -39,7 +37,7 @@ width: 66%;
 display: flex;
 justify-content: start;
 flex-basis: 1;
-border: 1px solid white;
+/* border: 1px solid white; */
 padding: 1em 1em;
 }
 .player-info h3 {
@@ -62,12 +60,15 @@ padding: 1em 1em;
 
 #stats-container, #items-container, #interact-container {
 height: 15em;
-border: 1px solid white;
 width: 10em;
-color: white;
+color:white;
 padding: 1em 1em;
-
+font-size: large;
 }
 #stats-container p, #items-container p, #interact-container p {
     padding-bottom: 0.5em;
+}  
+
+h5 {
+color: white;
 }

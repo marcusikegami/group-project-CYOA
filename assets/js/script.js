@@ -48,6 +48,10 @@ var boatNodes = [
                     {
                         text: "window",
                         nextNode: 3
+                    },
+                    {
+                        text: "test",
+                        nextNode: 7
                     }
                 ]
             },
@@ -116,6 +120,10 @@ var boatNodes = [
             {
                 id: 6,
                 text: "END OF DEMO"
+            },
+            {
+                id: 7,
+                text: "Testing Logic"
             }
         ];
 
