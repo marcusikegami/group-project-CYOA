@@ -49,10 +49,10 @@ var boatNodes = [
                         text: "window",
                         nextNode: 3
                     },
-                    {
-                        text: "test",
-                        nextNode: 7
-                    }
+                    // {
+                    //     text: "test",
+                    //     nextNode: 7
+                    // }
                 ]
             },
             {
@@ -119,12 +119,87 @@ var boatNodes = [
             },
             {
                 id: 6,
-                text: "END OF DEMO"
+                text: "Once you left the boat you have the option of going to the local TAVERN or CHURCH",
+                options: [
+                    {
+                        text: "tavern",
+                        nextNode: 7,
+                    },
+                    {
+                        text: "church",
+                        nextNode: 12,
+                    }
+                ]
             },
             {
                 id: 7,
-                text: "Testing Logic"
-            }
+                text: "tavern text logic - THUGS or INNKEEPER",
+                options: [
+                    {
+                        text: "thugs",
+                        nextNode: 8,
+                    },
+                    {
+                        text: "innkeeper",
+                        nextNode: 9,
+                    }
+                ]
+
+            },
+            {
+                id: 8,
+                text: "thug text logic maybe add a fight function - FIGHT or RUN",
+                options: [
+                    {
+                        text: "fight",
+                        nextNode: 10,
+                    },
+                    {
+                        text: "run",
+                        nextNode: 9,
+                    }
+                ]
+            },
+            {
+                id: 9,
+                text: "innkeeper text logic - OUTSIDE",
+                options: [
+                    {
+                        text: "outside",
+                        nextNode: 11,
+                    },
+                ]
+            },
+            {
+                id: 10,
+                text: "thug fight conlusion text logic - fight is done go OUTSIDE",
+                options: [
+                    {
+                        text: "outside",
+                        nextNode: 11,
+                    },
+                ]
+            },
+            // STILL WORKING ON TYING TOGETHER THUG/INNKEEPER EVENTS
+            {
+                id: 11,
+                text: "Outside after thug or Innkeeper",
+                nextNode: 15
+            },
+
+            // CHURCH ADVENTURE PATH
+            // {
+            //     id: 12,
+            //     text: "Church text logic - CARDINAL or ZEALOT",
+            //     nextNode: 15
+            // },
+
+            // AFTER CHURCH OR TAVERN
+            // {
+            //     id: 15,
+            //     text: "Linking tavern/churn",
+ 
+            // },
         ];
 
 // PLAYER STATS
