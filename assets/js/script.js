@@ -200,6 +200,12 @@ var boatNodes = [
             //     text: "Linking tavern/churn",
  
             // },
+            // AFTER CHURCH OR TAVERN
+            // {
+            //     id: 15,
+            //     text: "Linking tavern/churn",
+ 
+            // },
         ];
 
 // PLAYER STATS
