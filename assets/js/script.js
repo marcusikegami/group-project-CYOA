@@ -209,6 +209,21 @@ var boatNodes = [
             //     text: "Linking tavern/churn",
  
             // },
+            // {
+            //     id: 99,
+            //     text: "Are you sure you want to RESET the game? YES or NO",
+            //     options: [
+            //         {
+            //         text: "yes",
+            //         nextNode: refresh()
+            //         },
+            //         {
+            //             text: "no",
+            //             nextNode: "blank"
+            //         }
+                
+
+            
         ];
 
 // PLAYER STATS
@@ -323,14 +338,26 @@ document.getElementById("text-input").addEventListener("keypress", function(even
     }
 });
 
+document.getElementById("reset-button").addEventListener("click", function(){
+    location.reload(true);
+});
 
-
-
+document.getElementById("save-button").addEventListener("click", function(){
+    
+    saveGame();
+});
 
 startChapter();
 
 
+function saveGame() {
+var player = JSON.stringify(playerObj);
+localStorage.setItem("Player Stats", player);
 
+var playerGrab = localStorage.getItem("Player Stats");
+JSON.parse(playerGrab);
+console.log(playerGrab);
+};
 
 
 
