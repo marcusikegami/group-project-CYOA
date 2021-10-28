@@ -1,52 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="./assets/css/style.css">
-    
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+
+    <title>Choose Your Own Adventure</title>
 </head>
+
 <body>
-    <main class="main">
-        <article id="log-wrapper">
-                <div class="story-log">
-                    
+    <div id="start-screen" class="containerStart show">
+        <div class="section">
+            <div>
+                <img src="./assets/images/bloodborneimgtest.jpg" alt="City Landscape">
+                <div class="centered">
+                    <h1 class="header center black-text">Choose Your Own Adventure</h1>
+                    <div class="row center">
+                        <h5 class="header col s12 light">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Architecto itaque minus recusandae odit nihil nam optio delectus officia labore veritatis
+                            quae
+                            voluptate, pariatur rerum temporibus adipisci. In perspiciatis sunt nesciunt!</h5>
+                    </div>
+                    <div class="row center">
+                        <a id="start-button" class="btn-large waves-effect waves-light red darken-1">Start now!</a>
+                    </div>
                 </div>
-            
-            <div class="input-field">
-                <form>
-                <textarea type="text" id="text-input"></textarea>
+            </div>
+        </div>
+    </div>
+    <main id="main-page" class="hide">
+        <article id="log-wrapper">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card grey darken-4">
+                        <div class="card-content white-text">
+                            <div class="story-log row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row input-field">
+                <form class="col s12">
+                    <div class="row">
+                        <i class="material-icons prefix light-blue-text">mode_edit</i>
+                        <textarea type="text" id="text-input" class="materialize-textarea"></textarea>
+                    </div>
                 </form>
             </div>
-        </article>    
-        <article class="player-info">
-            <div class="stats">
-                <h3>STATS</h3>
-                <div id="stats-container">
-                    <p>Name: <span id="playerName"></span></p>
-                    <p>Class: <span id="playerClass"></span></p>
-                    <p>Health: <span id="playerHealth"></span>/100</p>
-                    <p>Defense: <span id="playerDefense"></span></p>
-                    <p>Credits: <span id="playerCredits"></span></p>
+            <!-- <div class="divider"></div> -->
+            <article class="player-info row">
+                <div class="col s12 m4">
+                    <div class="card icon-block grey darken-4">
+                        <h2 class="center light-blue-text"><i class="small material-icons">group</i></h2>
+                        <h5 class="center">STATS</h5>
+                        <div id="stats-container">
+                            <p>Name: <span id="playerName"></span></p>
+                            <p>Class: <span id="playerClass"></span></p>
+                            <p>Health: <span id="playerHealth"></span>/100</p>
+                            <p>Defense: <span id="playerDefense"></span></p>
+                            <p>Credits: <span id="playerCredits"></span></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <h3>ITEMS</h3>
-                <div id="items-container">
-                    
+                <div class="col s12 m4">
+                    <div class="item card icon-block grey darken-4">
+                        <h2 class="center light-blue-text"><i class="small material-icons">settings</i></h2>
+                        <h5 class="center">ITEMS</h5>
+                        <div id="items-container">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="story-options">
-                <h3>INTERACT</h3>
-                <div id="interact-container">
-                    
+                <div class="col s12 m4">
+                    <div class="story-options card icon-block grey darken-4">
+                        <h2 class="center light-blue-text"><i class="small material-icons">transfer_within_a_station
+                            </i></h2>
+                        <h5 class="center">INTERACT</h5>
+                        <div id="interact-container">
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </article>
         </article>
-
     </main>
+    <footer class="page-footer teal">
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
     <script defer src='./assets/js/script.js'></script>
 </body>
+
+
 </html>

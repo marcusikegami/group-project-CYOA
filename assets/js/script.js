@@ -2,12 +2,17 @@ let storylogEl = document.querySelector(".story-log");
 const textInput = document.getElementById("text-input");
 const interactEl = document.getElementById("interact-container");
 const itemsEl = document.getElementById("items-container");
+var startScreen = document.getElementById("start-screen");
+var mainPageScreen = document.getElementById("main-page");
 
 document.getElementById("log-wrapper").addEventListener("click", function(){
     textInput.focus();
 });
 
-
+document.getElementById("start-button").addEventListener("click", function(){
+    startScreen.setAttribute("class", "hide");
+    mainPageScreen.setAttribute("class", "show");
+});
 
 let credits = 0;
 
@@ -48,7 +53,11 @@ var boatNodes = [
                     {
                         text: "window",
                         nextNode: 3
-                    }
+                    },
+                    // {
+                    //     text: "test",
+                    //     nextNode: 7
+                    // }
                 ]
             },
             {
@@ -88,6 +97,10 @@ var boatNodes = [
                     {
                         text: "leave",
                         nextNode: 5
+                    },
+                    {
+                        text: "",
+                        nextNode: 5
                     }
                 ]
             },
@@ -115,8 +128,87 @@ var boatNodes = [
             },
             {
                 id: 6,
-                text: "END OF DEMO"
-            }
+                text: "Once you left the boat you have the option of going to the local TAVERN or CHURCH",
+                options: [
+                    {
+                        text: "tavern",
+                        nextNode: 7,
+                    },
+                    {
+                        text: "church",
+                        nextNode: 12,
+                    }
+                ]
+            },
+            {
+                id: 7,
+                text: "tavern text logic - THUGS or INNKEEPER",
+                options: [
+                    {
+                        text: "thugs",
+                        nextNode: 8,
+                    },
+                    {
+                        text: "innkeeper",
+                        nextNode: 9,
+                    }
+                ]
+
+            },
+            {
+                id: 8,
+                text: "thug text logic maybe add a fight function - FIGHT or RUN",
+                options: [
+                    {
+                        text: "fight",
+                        nextNode: 10,
+                    },
+                    {
+                        text: "run",
+                        nextNode: 9,
+                    }
+                ]
+            },
+            {
+                id: 9,
+                text: "innkeeper text logic - OUTSIDE",
+                options: [
+                    {
+                        text: "outside",
+                        nextNode: 11,
+                    },
+                ]
+            },
+            {
+                id: 10,
+                text: "thug fight conlusion text logic - fight is done go OUTSIDE",
+                options: [
+                    {
+                        text: "outside",
+                        nextNode: 11,
+                    },
+                ]
+            },
+            // STILL WORKING ON TYING TOGETHER THUG/INNKEEPER EVENTS
+            {
+                id: 11,
+                text: "Outside after thug or Innkeeper",
+                nextNode: 15
+            },
+
+            // CHURCH ADVENTURE PATH
+            // {
+            //     id: 12,
+            //     text: "Church text logic - CARDINAL or ZEALOT",
+            //     nextNode: 15
+            // },
+
+            // AFTER CHURCH OR TAVERN
+            // {
+            //     id: 15,
+            //     text: "Linking tavern/churn",
+ 
+            // },
         ];
 
 // PLAYER STATS
@@ -131,8 +223,6 @@ var boatNodes = [
    playerHealth.textContent = playerObj.class.health;
    playerDefense.textContent = playerObj.class.defense *100;
    playerCredits.textContent = credits;
-
-
 
 
 function clearInteractEl() {
@@ -206,6 +296,7 @@ chooseOption = (value) => {
                 var addItem = response.setState.text;
                 
                 credits += response.setState.altercredits;
+                playerCredits = credits;
                 logItems(logItem);
                 showItems(addItem)
 
