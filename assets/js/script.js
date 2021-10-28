@@ -2,12 +2,17 @@ let storylogEl = document.querySelector(".story-log");
 const textInput = document.getElementById("text-input");
 const interactEl = document.getElementById("interact-container");
 const itemsEl = document.getElementById("items-container");
+var startScreen = document.getElementById("start-screen");
+var mainPageScreen = document.getElementById("main-page");
 
 document.getElementById("log-wrapper").addEventListener("click", function(){
     textInput.focus();
 });
 
-
+document.getElementById("start-button").addEventListener("click", function(){
+    startScreen.setAttribute("class", "hide");
+    mainPageScreen.setAttribute("class", "show");
+});
 
 let credits = 0;
 
@@ -91,6 +96,10 @@ var boatNodes = [
                 options:[
                     {
                         text: "leave",
+                        nextNode: 5
+                    },
+                    {
+                        text: "",
                         nextNode: 5
                     }
                 ]
@@ -216,8 +225,6 @@ var boatNodes = [
    playerCredits.textContent = credits;
 
 
-
-
 function clearInteractEl() {
     if (interactEl.firstChild){
 
@@ -289,6 +296,7 @@ chooseOption = (value) => {
                 var addItem = response.setState.text;
                 
                 credits += response.setState.altercredits;
+                playerCredits = credits;
                 logItems(logItem);
                 showItems(addItem)
 
