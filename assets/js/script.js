@@ -15,32 +15,13 @@ document.getElementById("log-wrapper").addEventListener("click", function () {
 
 let credits = 0;
 
-// var playerObj = {
-//     playername: "Adventurer",
-//         class: { //classtype
-//             type: "fighter",
-//             health: 75,
-//             dT: 1,
-//             defense: 0.15,
-
-//         },
-//     credits: credits
-
-// };
 var items = {
     knife: { item: "knife", damage: 5 }
 
 };
 
-// nodeDESK: ,
-// nodeGETUP: ,
-// nodeWINDOW: 
-
 var boatNodes = [
-    {
-        id: 0,
-        text: "You are on the bed. By your feet is your DESK, you can GET UP, or peer out your WINDOW.",
-        options: [
+    
             {
 
                 id: 0,
@@ -55,10 +36,7 @@ var boatNodes = [
                         text: "",
                         nextNode: 1
                     },
-                    // {
-                    //     text: "test",
-                    //     nextNode: 7
-                    // }
+                   
                 ]
             },
             {
@@ -71,8 +49,22 @@ var boatNodes = [
                         nextNode: 2
                     }
                 ]
-
-
+            },
+            {
+                id: 2,
+                text: "You stand up from your bed to the floor of the ships cabin. You don't remember how you even got on a ship in the first place. LEAVE the room or peer out your WINDOW.",
+                options: [
+                    {
+                        text: "window",
+                        nextNode: 3,
+                    },
+                    {
+                        text: "leave",
+                        nextNode: 5
+                    }
+                ]
+            },
+            {
 
 
                 id: 3,
@@ -259,7 +251,7 @@ function clearInteractEl() {
 
 function startChapter() {
 
-items = {};;
+items = {};
 storyLog(0);
 musicLog("Ludwig Van Beethoven");
 
@@ -273,11 +265,11 @@ function populateInteract(response) {
 storyLog = (nodeId) => {
     clearInteractEl();
     var textNode = boatNodes.find(textNode => textNode.id === nodeId);
-    console.log(textNode);
+    
     var pEl = document.createElement("p");
     pEl.textContent = textNode.text;
     artist = textNode.music;
-    console.log(artist)
+    
     storylogEl.prepend(pEl);
     textInput.focus();
     musicLog(artist);
@@ -285,6 +277,7 @@ storyLog = (nodeId) => {
 
 
     function showOptions(textNode) {
+        debugger;
 
         for (i = 0; i < textNode.options.length; i++) {
             var response = textNode.options[i];
@@ -296,15 +289,58 @@ storyLog = (nodeId) => {
         }
 
 
-    }
+    }               
 
 
     function showItems(addItem) {
         var pEl = document.createElement("p");
         pEl.textContent = addItem;
         itemsEl.appendChild(pEl);
+    }
 
-});
+        function logItems(logItem) {
+            var pEl = document.createElement("p");
+            pEl.textContent = logItem;
+            storylogEl.prepend(pEl);
+        }
+        
+    
+    
+        chooseOption = (value) => {
+    
+    
+            for (i = 0; i < textNode.options.length; i++) {
+                var response = textNode.options[i];
+    
+    
+    
+                if (value === response.text) {
+                    var nextNode = response.nextNode;
+                    console.log("possible answer");
+    
+                    if (response.setState) {
+    
+                        var logItem = response.setState.logItem
+                        var addItem = response.setState.text;
+    
+                        credits += response.setState.altercredits;
+                        playerCredits = credits;
+                        logItems(logItem);
+                        showItems(addItem)
+    
+    
+                    };
+    
+                    storyLog(nextNode);
+    
+                }
+            }
+    
+        }
+    
+    
+
+};
 
 startChapter();
 
@@ -320,53 +356,13 @@ function musicLog(artist) {
     response.then(response => response.json()).then(data => {
         display_lat(data.data[0].preview);
     })
-    };
+    
     
     function display_lat(link) {
         document.getElementById("musid").src=link
     };
 
-    };
-    function logItems(logItem) {
-        var pEl = document.createElement("p");
-        pEl.textContent = logItem;
-        storylogEl.prepend(pEl);
-    };
-
-
-    chooseOption = (value) => {
-
-
-        for (i = 0; i < textNode.options.length; i++) {
-            var response = textNode.options[i];
-
-
-
-            if (value === response.text) {
-                var nextNode = response.nextNode;
-                console.log("possible answer");
-
-                if (response.setState) {
-
-                    var logItem = response.setState.logItem
-                    var addItem = response.setState.text;
-
-                    credits += response.setState.altercredits;
-                    playerCredits = credits;
-                    logItems(logItem);
-                    showItems(addItem)
-
-
-                };
-
-                storyLog(nextNode);
-
-            }
-        }
-
-    }
-
-};
+}
 document.getElementById("text-input").addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -377,6 +373,9 @@ document.getElementById("text-input").addEventListener("keypress", function (eve
 
         chooseOption(value);
     }
+    
+    
+
 });
 
 
