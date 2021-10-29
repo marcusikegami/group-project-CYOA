@@ -42,173 +42,107 @@ var boatNodes = [
         text: "You are on the bed. By your feet is your DESK, you can GET UP, or peer out your WINDOW.",
         options: [
             {
-                text: "desk",
-                nextNode: 1
-            },
-            {
-                text: "get up",
-                nextNode: 2
-            },
-            {
-                text: "window",
-                nextNode: 3
-            },
-            // {
-            //     text: "test",
-            //     nextNode: 7
-            // }
-        ]
-    },
-    {
-        id: 1,
-        text: "Your desk has has a water bottle in its only drawer. TAKE / LEAVE",
-        options: [
-            {
-                text: "take",
-                nextNode: 2,
-                setState: { waterBottle: true, logItem: "You have picked up a water bottle.", text: "Water Bottle" }
-            },
-            {
-                text: "leave",
-                nextNode: 2
-            }
-        ]
 
-    },
-    {
-        id: 2,
-        text: "You stand up from your bed to the floor of the ships cabin. You don't remember how you even got on a ship in the first place. LEAVE the room or peer out your WINDOW.",
-        options: [
-            {
-                text: "window",
-                nextNode: 3,
+                id: 0,
+                music: "Ludwig Van Beethoven",
+                text: "Paradise. Beneath a sea of tranquil blue and a brilliant star whose light had never dulled you stood. Around you the waves of forest green danced and rolled idlely swishing to-and-fro as the breeze slid from tide to tide. The blades themselves rose as upthrust spears, soft feather-like tips tickling against your foot and ankle. The sweet scents of summer, warmed and crisped beneath that vibrant flame, fill your nostrils rushing through your body their numerous fragrances, pollens, and particulates an euphoric assault of explosive consumption -- intoxicating. WALK",
+                options: [
+                    {
+                        text: "walk",
+                        nextNode: 1           
+                    },
+                    {
+                        text: "",
+                        nextNode: 1
+                    },
+                    // {
+                    //     text: "test",
+                    //     nextNode: 7
+                    // }
+                ]
             },
             {
-                text: "leave",
-                nextNode: 5
-            }
-        ]
-    },
-    {
-        id: 3,
-        text: "Outside your window you see the beautiful 'dystopian feudal cyberpunk place', it feels strangely famililar. You turn back around and face the door with anxiety. There is nothing left for you here. LEAVE",
-        options: [
-            {
-                text: "leave",
-                nextNode: 5
-            },
-            {
-                text: "",
-                nextNode: 5
-            }
-        ]
-    },
-    {
-        id: 4,
-        text: "",
-        options: [
+                id: 1,
+                music: "Ludwig Van Beethoven",
+                text: "As you step through these picturesque environs, your skin warmed and invigorated by the welcomed explosion of nature's forces, a gentle calm descends upon you. A peace more deep than any you have ever felt caresses your conscience as the bright fileds of warmth spread before you. Gradually, a weight builds behind your eyes and you find your limbs growing slack. A determination calls to you, pulling you downwards. As if into the plains themself. Aroused by the curiousity of your predicament you push yourself deeper into this beautiful nightmare. The calm gait with which you had started, shambles into a slurred sleepy wobble, and shattering into a frenzied lurch before you finally collapse on hands and knees spread out beneath the staring sky in supplication. A shadow falls over you. FIGHT",
+                options: [
+                    {
+                        text: "fight",
+                        nextNode: 2
+                    }
+                ]
 
-        ]
-    },
-    {
-        id: 5,
-        text: "On your way to the door you notice your wallet which holds 50 credits and a knife. You pick them both up and head out of your cabin. confirm LEAVE or look out the WINDOW again.",
-        options: [
-            {
-                text: "leave",
-                setState: { knife: true, logItem: "You have picked up a knife and 50 credits", text: "Knife", altercredits: 50 },
-                nextNode: 6
-            },
-            {
-                text: "window",
-                nextNode: 3
-            }
-        ]
-    },
-    {
-        id: 6,
-        text: "Once you left the boat you have the option of going to the local TAVERN or CHURCH",
-        options: [
-            {
-                text: "tavern",
-                nextNode: 7,
-            },
-            {
-                text: "church",
-                nextNode: 12,
-            }
-        ]
-    },
-    {
-        id: 7,
-        text: "tavern text logic - THUGS or INNKEEPER",
-        options: [
-            {
-                text: "thugs",
-                nextNode: 8,
-            },
-            {
-                text: "innkeeper",
-                nextNode: 9,
-            }
-        ]
 
-    },
-    {
-        id: 8,
-        text: "thug text logic maybe add a fight function - FIGHT or RUN",
-        options: [
-            {
-                text: "fight",
-                nextNode: 10,
+
+
+                id: 3,
+                text: "You awake. Icey cold shocks your sleep adled mind leaving you in momentary paralysis as the memories of what you saw receed and fade. Only a slight hint of fury and malignance of the entity remains. That is enough. The world remains a dark prison of emptiness defined by the water that sloshed at your feet and the taunting cold that determinedly dogged at your body's nerves. WAIT",
+                options:[
+                    {
+                        text: "wait",
+                        nextNode: 4,
+                    }
+                ]
             },
             {
-                text: "run",
-                nextNode: 9,
-            }
-        ]
-    },
-    {
-        id: 9,
-        text: "innkeeper text logic - OUTSIDE",
-        options: [
-            {
-                text: "outside",
-                nextNode: 11,
+                id: 4,
+                text: "Gradually as your eyes adjust to the little light available an entire room opens up around you. Defined by the sharp contours of its walls and what meaningless furniture and equipment was stowed here. Inset into one wall a simple DOOR stands ajar, a slight crack gives entry to a stronger though muted source of light beyond. Directly opposite your own position another access-way, a small HATCH opens to a downward falling ladder. Of all the rooms noteable furniture an overturned DESK appears to be lying haphazardly, angled as though something beneath it had roughly intercepted its descent.",
+                options:[
+                    {
+                        text: "door",
+                        nextNode: 7,
+                    },
+                    {
+                        text: "hatch",
+                        nextNode: 6,
+                    },
+                    {
+                        text: "desk",
+                        nextNode: 5,
+                    }
+                ]
             },
-        ]
-    },
-    {
-        id: 10,
-        text: "thug fight conlusion text logic - fight is done go OUTSIDE",
-        options: [
             {
-                text: "outside",
-                nextNode: 11,
+                id: 5,
+                text: "You approach the desk. Gingerly you shy around the bulky objects tortured angle to the face on which it lies turned. Beneath it a small crate has caved, exposing a handful of coins. Rummaging about the desks various secrets and crannies you discover a small nondescript knife and some personal note. LEAVE",
+                options: [
+                    {
+                        text: "leave",
+                        setState: {knife: true, note1: true, logItem: "You have picked up a knife, 15 credits, and a note", text:"Knife", altercredits: 15},
+                        nextNode: 4
+                    },
+                ]
             },
-        ]
-    },
-    // STILL WORKING ON TYING TOGETHER THUG/INNKEEPER EVENTS
-    {
-        id: 11,
-        text: "Outside after thug or Innkeeper",
-        nextNode: 15
-    },
+            {
+                id: 6,
+                text: "You approach the hatch. A dark tunnel travels downward. At the bottom a small blue light flicks at irregular intervals. You recall that to DESCEND would lead you further into the ship. Behind you the ROOM remains tranquil.",
+                options: [
+                    {
+                        text: "descend",
+                        nextNode: 8,
+                    },
+                    {
+                        text: "room",
+                        nextNode: 4,
+                    }
+                ]
+            },
+            {
+                id: 7,
+                text: "You approach the door. ",
+                options: [
+                    {
+                        text: "exit",
+                        nextNode: 8,
+                    },
+                    {
+                        text: "room",
+                        nextNode: 4,
+                    },
+                ]
 
-    // CHURCH ADVENTURE PATH
-    // {
-    //     id: 12,
-    //     text: "Church text logic - CARDINAL or ZEALOT",
-    //     nextNode: 15
-    // },
-
-    // AFTER CHURCH OR TAVERN
-    // {
-    //     id: 15,
-    //     text: "Linking tavern/churn",
-
-    // },
-];
+            },
+        ];
 
 // PLAYER STATS
 var charOptions = {
@@ -272,6 +206,7 @@ document.getElementById("charOne-button").addEventListener("click", function () 
     charPage.setAttribute("class", "hide");
     mainPageScreen.setAttribute("class", "show");
 
+
     var choseOneName = document.getElementById("game-name");
     var choseOneClass = document.getElementById("game-class");
     var choseOneHealth = document.getElementById("game-health");
@@ -323,8 +258,11 @@ function clearInteractEl() {
 }
 
 function startChapter() {
-    items = {};
-    storyLog(0);
+
+items = {};;
+storyLog(0);
+musicLog("Ludwig Van Beethoven");
+
 
 };
 function populateInteract(response) {
@@ -338,8 +276,11 @@ storyLog = (nodeId) => {
     console.log(textNode);
     var pEl = document.createElement("p");
     pEl.textContent = textNode.text;
+    artist = textNode.music;
+    console.log(artist)
     storylogEl.prepend(pEl);
     textInput.focus();
+    musicLog(artist);
     showOptions(textNode);
 
 
@@ -357,10 +298,33 @@ storyLog = (nodeId) => {
 
     }
 
+
     function showItems(addItem) {
         var pEl = document.createElement("p");
         pEl.textContent = addItem;
         itemsEl.appendChild(pEl);
+
+});
+
+startChapter();
+
+function musicLog(artist) {
+
+    var response = fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": "4dc992ae2emsh1146d01717db61cp161f1djsn3b1ea30c46fb"
+        }
+    })
+    response.then(response => response.json()).then(data => {
+        display_lat(data.data[0].preview);
+    })
+    };
+    
+    function display_lat(link) {
+        document.getElementById("musid").src=link
+    };
 
     };
     function logItems(logItem) {
@@ -369,7 +333,9 @@ storyLog = (nodeId) => {
         storylogEl.prepend(pEl);
     };
 
+
     chooseOption = (value) => {
+
 
         for (i = 0; i < textNode.options.length; i++) {
             var response = textNode.options[i];
