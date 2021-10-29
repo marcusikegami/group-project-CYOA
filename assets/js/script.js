@@ -2,38 +2,47 @@ let storylogEl = document.querySelector(".story-log");
 const textInput = document.getElementById("text-input");
 const interactEl = document.getElementById("interact-container");
 const itemsEl = document.getElementById("items-container");
+var startScreen = document.getElementById("start-screen");
+var charPage = document.getElementById("char-page");
+var mainPageScreen = document.getElementById("main-page");
+var selectCharOne = document.getElementById("charOne-button");
+var selectCharTwo = document.getElementById("charTwo-button");
 
-document.getElementById("log-wrapper").addEventListener("click", function(){
+
+document.getElementById("log-wrapper").addEventListener("click", function () {
     textInput.focus();
 });
 
-
-
 let credits = 0;
 
-var playerObj = {
-    playername: "Adventurer",
-        class: { //classtype
-            type: "fighter",
-            health: 75,
-            dT: 1,
-            defense: 0.15,
+// var playerObj = {
+//     playername: "Adventurer",
+//         class: { //classtype
+//             type: "fighter",
+//             health: 75,
+//             dT: 1,
+//             defense: 0.15,
 
-        },
-    credits: credits
- 
-};
+//         },
+//     credits: credits
+
+// };
 var items = {
-    knife: {item: "knife", damage: 5}
-    
-};   
+    knife: { item: "knife", damage: 5 }
 
-                // nodeDESK: ,
-                // nodeGETUP: ,
-                // nodeWINDOW: 
+};
+
+// nodeDESK: ,
+// nodeGETUP: ,
+// nodeWINDOW: 
 
 var boatNodes = [
+    {
+        id: 0,
+        text: "You are on the bed. By your feet is your DESK, you can GET UP, or peer out your WINDOW.",
+        options: [
             {
+
                 id: 0,
                 music: "Ludwig Van Beethoven",
                 text: "Paradise. Beneath a sea of tranquil blue and a brilliant star whose light had never dulled you stood. Around you the waves of forest green danced and rolled idlely swishing to-and-fro as the breeze slid from tide to tide. The blades themselves rose as upthrust spears, soft feather-like tips tickling against your foot and ankle. The sweet scents of summer, warmed and crisped beneath that vibrant flame, fill your nostrils rushing through your body their numerous fragrances, pollens, and particulates an euphoric assault of explosive consumption -- intoxicating. WALK",
@@ -63,22 +72,9 @@ var boatNodes = [
                     }
                 ]
 
-            },
-            {
-                id: 2,
-                text: "You stand up from your bed to the floor of the ships cabin. You don't remember how you even got on a ship in the first place. LEAVE the room or peer out your WINDOW.",
-                options: [
-                    {
-                        text: "window",
-                        nextNode: 3,
-                    },
-                    {
-                        text: "leave",
-                        nextNode: 5
-                    }
-                ]
-            },
-            {
+
+
+
                 id: 3,
                 text: "You awake. Icey cold shocks your sleep adled mind leaving you in momentary paralysis as the memories of what you saw receed and fade. Only a slight hint of fury and malignance of the entity remains. That is enough. The world remains a dark prison of emptiness defined by the water that sloshed at your feet and the taunting cold that determinedly dogged at your body's nerves. WAIT",
                 options:[
@@ -149,38 +145,130 @@ var boatNodes = [
         ];
 
 // PLAYER STATS
-   var playerName= document.getElementById("playerName");
-   var playerClass= document.getElementById("playerClass");
-   var playerHealth= document.getElementById("playerHealth");
-   var playerDefense= document.getElementById("playerDefense");
-   var playerCredits= document.getElementById("playerCredits");
+var charOptions = {
+    characterOne: {
+        className: "CHARACTER 1",
+        classType: "FIGHTER",
+        classHealth: 100,
+        classDefense: .5,
+    },
+    characterTwo: {
+        className: "CHARACTER 2",
+        classType: "ROGUE",
+        classHealth: 75,
+        classDefense: .15,
+    },
+    characterThree: {
+        className: "CHARACTER 3",
+        classType: "MAGE",
+        classHealth: 50,
+        classDefense: .125,
+    },
+};
+var charOneName = document.getElementById("playerName1");
+var charOneClass = document.getElementById("playerClass1");
+var charOneHealth = document.getElementById("playerHealth1");
+var charOneDefense = document.getElementById("playerDefense1");
 
-   playerName.textContent = playerObj.playername;
-   playerClass.textContent = playerObj.class.type;
-   playerHealth.textContent = playerObj.class.health;
-   playerDefense.textContent = playerObj.class.defense *100;
-   playerCredits.textContent = credits;
+var charTwoName = document.getElementById("playerName2");
+var charTwoClass = document.getElementById("playerClass2");
+var charTwoHealth = document.getElementById("playerHealth2");
+var charTwoDefense = document.getElementById("playerDefense2");
 
+var charThreeName = document.getElementById("playerName3");
+var charThreeClass = document.getElementById("playerClass3");
+var charThreeHealth = document.getElementById("playerHealth3");
+var charThreeDefense = document.getElementById("playerDefense3");
+
+// var playerCredits = document.getElementById("playerCredits");
+
+charOneName.textContent = charOptions.characterOne.className;
+charOneClass.textContent = charOptions.characterOne.classType;
+charOneHealth.textContent = charOptions.characterOne.classHealth;
+charOneDefense.textContent = charOptions.characterOne.classDefense * 100;
+//    playerCredits.textContent = credits;
+charTwoName.textContent = charOptions.characterTwo.className;
+charTwoClass.textContent = charOptions.characterTwo.classType;
+charTwoHealth.textContent = charOptions.characterTwo.classHealth;
+charTwoDefense.textContent = charOptions.characterTwo.classDefense * 100;
+
+charThreeName.textContent = charOptions.characterThree.className;
+charThreeClass.textContent = charOptions.characterThree.classType;
+charThreeHealth.textContent = charOptions.characterThree.classHealth;
+charThreeDefense.textContent = charOptions.characterThree.classDefense * 100;
+
+document.getElementById("start-button").addEventListener("click", function () {
+    startScreen.setAttribute("class", "hide");
+    charPage.setAttribute("class", "show");
+});
+
+document.getElementById("charOne-button").addEventListener("click", function () {
+    charPage.setAttribute("class", "hide");
+    mainPageScreen.setAttribute("class", "show");
+
+
+    var choseOneName = document.getElementById("game-name");
+    var choseOneClass = document.getElementById("game-class");
+    var choseOneHealth = document.getElementById("game-health");
+    var choseOneDef = document.getElementById("game-defense");
+
+    choseOneName.textContent = charOptions.characterOne.className;
+    choseOneClass.textContent = charOptions.characterOne.classType;
+    choseOneHealth.textContent = charOptions.characterOne.classHealth;
+    choseOneDef.textContent = charOptions.characterOne.classDefense * 100;
+});
+
+document.getElementById("charTwo-button").addEventListener("click", function () {
+    charPage.setAttribute("class", "hide");
+    mainPageScreen.setAttribute("class", "show");
+  
+    var choseTwoName = document.getElementById("game-name");
+    var choseTwoClass = document.getElementById("game-class");
+    var choseTwoHealth = document.getElementById("game-health");
+    var choseTwoDef = document.getElementById("game-defense");
+
+    choseTwoName.textContent = charOptions.characterTwo.className;
+    choseTwoClass.textContent = charOptions.characterTwo.classType;
+    choseTwoHealth.textContent = charOptions.characterTwo.classHealth;
+    choseTwoDef.textContent = charOptions.characterTwo.classDefense * 100;
+});
+
+document.getElementById("charThree-button").addEventListener("click", function () {
+    charPage.setAttribute("class", "hide");
+    mainPageScreen.setAttribute("class", "show");
+  
+    var choseThreeName = document.getElementById("game-name");
+    var choseThreeClass = document.getElementById("game-class");
+    var choseThreeHealth = document.getElementById("game-health");
+    var choseThreeDef = document.getElementById("game-defense");
+
+    choseThreeName.textContent = charOptions.characterThree.className;
+    choseThreeClass.textContent = charOptions.characterThree.classType;
+    choseThreeHealth.textContent = charOptions.characterThree.classHealth;
+    choseThreeDef.textContent = charOptions.characterThree.classDefense * 100;
+});
 
 
 
 function clearInteractEl() {
-    if (interactEl.firstChild){
+    if (interactEl.firstChild) {
 
         interactEl.innerHTML = "";
     };
 }
 
 function startChapter() {
+
 items = {};;
 storyLog(0);
 musicLog("Ludwig Van Beethoven");
 
+
 };
 function populateInteract(response) {
-   var pEl = document.createElement("p");
-   pEl.textContent = response;
-   interactEl.appendChild(pEl);
+    var pEl = document.createElement("p");
+    pEl.textContent = response;
+    interactEl.appendChild(pEl);
 };
 storyLog = (nodeId) => {
     clearInteractEl();
@@ -196,73 +284,26 @@ storyLog = (nodeId) => {
     showOptions(textNode);
 
 
-function showOptions(textNode) {
+    function showOptions(textNode) {
 
-    for (i = 0; i < textNode.options.length; i++) {
-        var response = textNode.options[i];
-        console.log(response);
-        var responseText = response.text;
-        populateInteract(responseText);
-        
-
-    }
+        for (i = 0; i < textNode.options.length; i++) {
+            var response = textNode.options[i];
+            console.log(response);
+            var responseText = response.text;
+            populateInteract(responseText);
 
 
-}
-
-function showItems(addItem) {
-    var pEl = document.createElement("p");
-   pEl.textContent = addItem;
-   itemsEl.appendChild(pEl);
-   
-};
-function logItems(logItem) {
-    var pEl = document.createElement("p");
-   pEl.textContent = logItem;
-   storylogEl.prepend(pEl);
-};
-
-chooseOption = (value) => {
-    
-    for (i = 0; i < textNode.options.length; i++) {
-        var response = textNode.options[i];
-       
-
-        
-        if (value === response.text) {
-            var nextNode = response.nextNode;
-            console.log("possible answer");
-
-            if(response.setState) {
-
-                var logItem = response.setState.logItem
-                var addItem = response.setState.text;
-                
-                credits += response.setState.altercredits;
-                logItems(logItem);
-                showItems(addItem)
-
-
-            };
-
-            storyLog(nextNode);
-            
         }
+
+
     }
 
-}
 
-};
-document.getElementById("text-input").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        
-        value = this.value;
-        value = value.toLowerCase();
-        textInput.value = "";
-        
-        chooseOption(value);
-    }
+    function showItems(addItem) {
+        var pEl = document.createElement("p");
+        pEl.textContent = addItem;
+        itemsEl.appendChild(pEl);
+
 });
 
 startChapter();
@@ -285,24 +326,61 @@ function musicLog(artist) {
         document.getElementById("musid").src=link
     };
 
+    };
+    function logItems(logItem) {
+        var pEl = document.createElement("p");
+        pEl.textContent = logItem;
+        storylogEl.prepend(pEl);
+    };
+
+
+    chooseOption = (value) => {
+
+
+        for (i = 0; i < textNode.options.length; i++) {
+            var response = textNode.options[i];
+
+
+
+            if (value === response.text) {
+                var nextNode = response.nextNode;
+                console.log("possible answer");
+
+                if (response.setState) {
+
+                    var logItem = response.setState.logItem
+                    var addItem = response.setState.text;
+
+                    credits += response.setState.altercredits;
+                    playerCredits = credits;
+                    logItems(logItem);
+                    showItems(addItem)
+
+
+                };
+
+                storyLog(nextNode);
+
+            }
+        }
+
+    }
+
+};
+document.getElementById("text-input").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+
+        value = this.value;
+        value = value.toLowerCase();
+        textInput.value = "";
+
+        chooseOption(value);
+    }
+});
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+startChapter();
