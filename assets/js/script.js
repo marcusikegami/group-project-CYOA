@@ -145,19 +145,19 @@ var boatNodes = [
 // PLAYER STATS
 var charOptions = {
     characterOne: {
-        className: "CHARACTER 1",
+        // className: "CHARACTER 1",
         classType: "FIGHTER",
         classHealth: 100,
         classDefense: .5,
     },
     characterTwo: {
-        className: "CHARACTER 2",
+        // className: "CHARACTER 2",
         classType: "ROGUE",
         classHealth: 75,
         classDefense: .15,
     },
     characterThree: {
-        className: "CHARACTER 3",
+        // className: "CHARACTER 3",
         classType: "MAGE",
         classHealth: 50,
         classDefense: .125,
@@ -180,17 +180,17 @@ var charThreeDefense = document.getElementById("playerDefense3");
 
 // var playerCredits = document.getElementById("playerCredits");
 
-charOneName.textContent = charOptions.characterOne.className;
+// charOneName.textContent = charOptions.characterOne.className;
 charOneClass.textContent = charOptions.characterOne.classType;
 charOneHealth.textContent = charOptions.characterOne.classHealth;
 charOneDefense.textContent = charOptions.characterOne.classDefense * 100;
 //    playerCredits.textContent = credits;
-charTwoName.textContent = charOptions.characterTwo.className;
+// charTwoName.textContent = charOptions.characterTwo.className;
 charTwoClass.textContent = charOptions.characterTwo.classType;
 charTwoHealth.textContent = charOptions.characterTwo.classHealth;
 charTwoDefense.textContent = charOptions.characterTwo.classDefense * 100;
 
-charThreeName.textContent = charOptions.characterThree.className;
+// charThreeName.textContent = charOptions.characterThree.className;
 charThreeClass.textContent = charOptions.characterThree.classType;
 charThreeHealth.textContent = charOptions.characterThree.classHealth;
 charThreeDefense.textContent = charOptions.characterThree.classDefense * 100;
@@ -209,8 +209,10 @@ document.getElementById("charOne-button").addEventListener("click", function () 
     var choseOneClass = document.getElementById("game-class");
     var choseOneHealth = document.getElementById("game-health");
     var choseOneDef = document.getElementById("game-defense");
+    var userName = document.getElementById("name-input");
 
-    choseOneName.textContent = charOptions.characterOne.className;
+    
+    choseOneName.textContent = userName.value
     choseOneClass.textContent = charOptions.characterOne.classType;
     choseOneHealth.textContent = charOptions.characterOne.classHealth;
     choseOneDef.textContent = charOptions.characterOne.classDefense * 100;
@@ -225,8 +227,10 @@ document.getElementById("charTwo-button").addEventListener("click", function () 
     var choseTwoClass = document.getElementById("game-class");
     var choseTwoHealth = document.getElementById("game-health");
     var choseTwoDef = document.getElementById("game-defense");
+    var userName = document.getElementById("name-input");
 
-    choseTwoName.textContent = charOptions.characterTwo.className;
+
+    choseTwoName.textContent = userName.value
     choseTwoClass.textContent = charOptions.characterTwo.classType;
     choseTwoHealth.textContent = charOptions.characterTwo.classHealth;
     choseTwoDef.textContent = charOptions.characterTwo.classDefense * 100;
@@ -241,8 +245,10 @@ document.getElementById("charThree-button").addEventListener("click", function (
     var choseThreeClass = document.getElementById("game-class");
     var choseThreeHealth = document.getElementById("game-health");
     var choseThreeDef = document.getElementById("game-defense");
+    var userName = document.getElementById("name-input");
 
-    choseThreeName.textContent = charOptions.characterThree.className;
+
+    choseThreeName.textContent = userName.value
     choseThreeClass.textContent = charOptions.characterThree.classType;
     choseThreeHealth.textContent = charOptions.characterThree.classHealth;
     choseThreeDef.textContent = charOptions.characterThree.classDefense * 100;
