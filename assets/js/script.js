@@ -108,6 +108,7 @@ var boatNodes = [
                         setState: {knife: true, note1: true, logItem: "You have picked up a knife, 15 credits, and a note", text:"Knife", altercredits: 15},
                         nextNode: 4
                     }
+
                 ]
             },
             {
