@@ -13,7 +13,7 @@ https://marcusikegami.github.io/group-project-CYOA/
 
 
 
-![Screenshot of the password generator](https://github.com/marcusikegami/group-project-CYOA/blob/main/Assets/images/appdemo.png?raw=true)
+![Screenshot of the password generator](https://https://github.com/marcusikegami/group-project-CYOA/blob/main/assets/images/appdemo.png?raw=true)
 
 ## Future Additions
 
