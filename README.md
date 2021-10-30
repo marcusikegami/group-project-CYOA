@@ -11,18 +11,23 @@ The app runs in the browser and features dynamically updated HTML and CSS powere
 
 https://marcusikegami.github.io/group-project-CYOA/
 
+
 ![cyoa-project](https://user-images.githubusercontent.com/72709180/139560027-e5d1f613-ccf2-48dd-8664-6a77bbcdda17.gif)
+
+
+![Gameplay screenshot](https://github.com/marcusikegami/group-project-CYOA/blob/main/assets/images/appdemo.png?raw=true)
+
 
 ## Future Additions
 
-*Enhanced story with several paths
-*Combat
-*Merchants
-*Cut scenes
-*Enahnced story art and UI
+* Enhanced story with several paths
+* Combat
+* Merchants
+* Cut scenes
+* Enahnced story art and UI
 
 #### Written With
 * HTML
 * CSS
-    -materialize framework
+** materialize framework
 * Javascript
