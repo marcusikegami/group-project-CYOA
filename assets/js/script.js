@@ -208,6 +208,7 @@ document.getElementById("charOne-button").addEventListener("click", function () 
     choseOneClass.textContent = charOptions.characterOne.classType;
     choseOneHealth.textContent = charOptions.characterOne.classHealth;
     choseOneDef.textContent = charOptions.characterOne.classDefense * 100;
+    startChapter();
 });
 
 document.getElementById("charTwo-button").addEventListener("click", function () {
@@ -223,6 +224,7 @@ document.getElementById("charTwo-button").addEventListener("click", function () 
     choseTwoClass.textContent = charOptions.characterTwo.classType;
     choseTwoHealth.textContent = charOptions.characterTwo.classHealth;
     choseTwoDef.textContent = charOptions.characterTwo.classDefense * 100;
+    startChapter();
 });
 
 document.getElementById("charThree-button").addEventListener("click", function () {
@@ -238,6 +240,7 @@ document.getElementById("charThree-button").addEventListener("click", function (
     choseThreeClass.textContent = charOptions.characterThree.classType;
     choseThreeHealth.textContent = charOptions.characterThree.classHealth;
     choseThreeDef.textContent = charOptions.characterThree.classDefense * 100;
+    startChapter();
 });
 
 
@@ -249,14 +252,7 @@ function clearInteractEl() {
     };
 }
 
-function startChapter() {
 
-items = {};
-storyLog(0);
-musicLog("Ludwig Van Beethoven");
-
-
-};
 function populateInteract(response) {
     var pEl = document.createElement("p");
     pEl.textContent = response;
@@ -277,7 +273,7 @@ storyLog = (nodeId) => {
 
 
     function showOptions(textNode) {
-        debugger;
+        
 
         for (i = 0; i < textNode.options.length; i++) {
             var response = textNode.options[i];
@@ -342,8 +338,6 @@ storyLog = (nodeId) => {
 
 };
 
-startChapter();
-
 function musicLog(artist) {
 
     var response = fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist, {
@@ -380,6 +374,12 @@ document.getElementById("text-input").addEventListener("keypress", function (eve
 
 
 
+function startChapter() {
+
+items = {};
+storyLog(0);
+musicLog("Ludwig Van Beethoven");
 
 
-startChapter();
+};
+
