@@ -3,13 +3,18 @@
     padding: 0;
     margin: 0;
 }
+/* Display flex on body/main part of sticky footer */
 body {
     background-color: black;
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}   
 main {
 margin-left: auto;
 margin-right: auto;
 width: 75%;
+flex: 1 0 auto;
 }
 .input-field {
     width: 100%;
