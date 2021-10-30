@@ -11,9 +11,7 @@ The app runs in the browser and features dynamically updated HTML and CSS powere
 
 https://marcusikegami.github.io/group-project-CYOA/
 
-
-
-![Screenshot of the password generator](https://github.com/marcusikegami/group-project-CYOA/blob/main/Assets/images/appdemo.png?raw=true)
+![cyoa-project](https://user-images.githubusercontent.com/72709180/139560027-e5d1f613-ccf2-48dd-8664-6a77bbcdda17.gif)
 
 ## Future Additions
 
