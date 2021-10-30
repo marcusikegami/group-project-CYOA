@@ -13,18 +13,18 @@ https://marcusikegami.github.io/group-project-CYOA/
 
 
 
-![Screenshot of the password generator](https://https://github.com/marcusikegami/group-project-CYOA/blob/main/assets/images/appdemo.png?raw=true)
+![Gameplay screenshot](https://https://github.com/marcusikegami/group-project-CYOA/blob/main/assets/images/appdemo.png?raw=true)
 
 ## Future Additions
 
-*Enhanced story with several paths
-*Combat
-*Merchants
-*Cut scenes
-*Enahnced story art and UI
+* Enhanced story with several paths
+* Combat
+* Merchants
+* Cut scenes
+* Enahnced story art and UI
 
 #### Written With
 * HTML
 * CSS
-    -materialize framework
+** materialize framework
 * Javascript
