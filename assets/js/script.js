@@ -139,7 +139,7 @@ var boatNodes = [
                     },
                 ]
 
-            },
+
         ];
 
 // PLAYER STATS
@@ -373,8 +373,7 @@ document.getElementById("text-input").addEventListener("keypress", function (eve
 
         chooseOption(value);
     }
-    
-    
+
 
 });
 
@@ -388,4 +387,28 @@ musicLog("Ludwig Van Beethoven");
 
 
 };
+
+});
+
+document.getElementById("reset-button").addEventListener("click", function(){
+    location.reload(true);
+});
+
+document.getElementById("save-button").addEventListener("click", function(){
+    
+    saveGame();
+});
+
+startChapter();
+
+
+function saveGame() {
+var player = JSON.stringify(playerObj);
+localStorage.setItem("Player Stats", player);
+
+var playerGrab = localStorage.getItem("Player Stats");
+JSON.parse(playerGrab);
+console.log(playerGrab);
+};
+
 
