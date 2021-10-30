@@ -13,7 +13,7 @@ https://marcusikegami.github.io/group-project-CYOA/
 
 
 
-![Gameplay screenshot](https://https://github.com/marcusikegami/group-project-CYOA/blob/main/assets/images/appdemo.png?raw=true)
+![Gameplay screenshot](https://github.com/marcusikegami/group-project-CYOA/blob/main/assets/images/appdemo.png?raw=true)
 
 ## Future Additions
 
