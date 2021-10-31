@@ -41,7 +41,6 @@ var boatNodes = [
             },
             {
                 id: 1,
-                music: "Ludwig Van Beethoven",
                 text: "As you step through these picturesque environs, your skin warmed and invigorated by the welcomed explosion of nature's forces, a gentle calm descends upon you. A peace more deep than any you have ever felt caresses your conscience as the bright fileds of warmth spread before you. Gradually, a weight builds behind your eyes and you find your limbs growing slack. A determination calls to you, pulling you downwards. As if into the plains themself. Aroused by the curiousity of your predicament you push yourself deeper into this beautiful nightmare. The calm gait with which you had started, shambles into a slurred sleepy wobble, and shattering into a frenzied lurch before you finally collapse on hands and knees spread out beneath the staring sky in supplication. A shadow falls over you. FIGHT",
                 options: [
                     {
@@ -145,19 +144,16 @@ var boatNodes = [
 // PLAYER STATS
 var charOptions = {
     characterOne: {
-        // className: "CHARACTER 1",
         classType: "FIGHTER",
         classHealth: 100,
         classDefense: .5,
     },
     characterTwo: {
-        // className: "CHARACTER 2",
         classType: "ROGUE",
         classHealth: 75,
         classDefense: .15,
     },
     characterThree: {
-        // className: "CHARACTER 3",
         classType: "MAGE",
         classHealth: 50,
         classDefense: .125,
@@ -180,17 +176,14 @@ var charThreeDefense = document.getElementById("playerDefense3");
 
 // var playerCredits = document.getElementById("playerCredits");
 
-// charOneName.textContent = charOptions.characterOne.className;
 charOneClass.textContent = charOptions.characterOne.classType;
 charOneHealth.textContent = charOptions.characterOne.classHealth;
 charOneDefense.textContent = charOptions.characterOne.classDefense * 100;
 //    playerCredits.textContent = credits;
-// charTwoName.textContent = charOptions.characterTwo.className;
 charTwoClass.textContent = charOptions.characterTwo.classType;
 charTwoHealth.textContent = charOptions.characterTwo.classHealth;
 charTwoDefense.textContent = charOptions.characterTwo.classDefense * 100;
 
-// charThreeName.textContent = charOptions.characterThree.className;
 charThreeClass.textContent = charOptions.characterThree.classType;
 charThreeHealth.textContent = charOptions.characterThree.classHealth;
 charThreeDefense.textContent = charOptions.characterThree.classDefense * 100;
