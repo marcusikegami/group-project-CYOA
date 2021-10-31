@@ -138,7 +138,7 @@ var boatNodes = [
                         nextNode: 4,
                     },
                 ]
-
+            }
 
         ];
 
@@ -388,7 +388,7 @@ musicLog("Ludwig Van Beethoven");
 
 };
 
-});
+
 
 document.getElementById("reset-button").addEventListener("click", function(){
     location.reload(true);
