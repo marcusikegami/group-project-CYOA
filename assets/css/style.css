@@ -69,3 +69,7 @@ color: white;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+#game-name {
+    font-weight: bold;
+    font-size: x-large;
+}

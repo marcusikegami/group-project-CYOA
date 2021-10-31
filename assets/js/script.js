@@ -209,10 +209,11 @@ document.getElementById("charOne-button").addEventListener("click", function () 
     var choseOneClass = document.getElementById("game-class");
     var choseOneHealth = document.getElementById("game-health");
     var choseOneDef = document.getElementById("game-defense");
-    var userName = document.getElementById("name-input");
+    var userNameInput = document.getElementById("name-input");
+    var userName = userNameInput.value;
 
     
-    choseOneName.textContent = userName.value
+    choseOneName.textContent = userName;
     choseOneClass.textContent = charOptions.characterOne.classType;
     choseOneHealth.textContent = charOptions.characterOne.classHealth;
     choseOneDef.textContent = charOptions.characterOne.classDefense * 100;
@@ -227,10 +228,11 @@ document.getElementById("charTwo-button").addEventListener("click", function () 
     var choseTwoClass = document.getElementById("game-class");
     var choseTwoHealth = document.getElementById("game-health");
     var choseTwoDef = document.getElementById("game-defense");
-    var userName = document.getElementById("name-input");
+    var userNameInput = document.getElementById("name-input");
+    var userName = userNameInput.value;
 
 
-    choseTwoName.textContent = userName.value
+    choseTwoName.textContent = userName;
     choseTwoClass.textContent = charOptions.characterTwo.classType;
     choseTwoHealth.textContent = charOptions.characterTwo.classHealth;
     choseTwoDef.textContent = charOptions.characterTwo.classDefense * 100;
@@ -245,10 +247,11 @@ document.getElementById("charThree-button").addEventListener("click", function (
     var choseThreeClass = document.getElementById("game-class");
     var choseThreeHealth = document.getElementById("game-health");
     var choseThreeDef = document.getElementById("game-defense");
-    var userName = document.getElementById("name-input");
+    var userNameInput = document.getElementById("name-input");
+    var userName = userNameInput.value;
 
 
-    choseThreeName.textContent = userName.value
+    choseThreeName.textContent = userName;
     choseThreeClass.textContent = charOptions.characterThree.classType;
     choseThreeHealth.textContent = charOptions.characterThree.classHealth;
     choseThreeDef.textContent = charOptions.characterThree.classDefense * 100;
