@@ -36,7 +36,6 @@ var boatNodes = [
                         text: "",
                         nextNode: 1
                     },
-                   
                 ]
             },
             {
