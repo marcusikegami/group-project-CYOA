@@ -73,3 +73,8 @@ color: white;
     font-weight: bold;
     font-size: x-large;
 }
+.start-title {
+    font-size: 100px;
+    font-family: Papyrus, fantasy;
+    font-weight: bolder;
+}
