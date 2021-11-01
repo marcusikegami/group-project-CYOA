@@ -482,7 +482,7 @@ function audio(text) {
 
 
 
-    fetch("http://api.voicerss.org/?key=667ae473f8df46b7984e35ffe16c18ea&hl=en-us&v=john&c=MP3&f=16khz_16bit_stereo&src=" + text,)
+    fetch("https://api.voicerss.org/?key=667ae473f8df46b7984e35ffe16c18ea&hl=en-us&v=john&c=MP3&f=16khz_16bit_stereo&src=" + text,)
     .then(response => {
         speech(response.url);
     })
