@@ -302,7 +302,6 @@ document.getElementById("charOne-button").addEventListener("click", function () 
     var userNameInput = document.getElementById("name-input");
     var userName = userNameInput.value;
 
-    
     choseOneName.textContent = userName;
     choseOneClass.textContent = charOptions.characterOne.classType;
     choseOneHealth.textContent = charOptions.characterOne.classHealth;
@@ -321,7 +320,6 @@ document.getElementById("charTwo-button").addEventListener("click", function () 
     var userNameInput = document.getElementById("name-input");
     var userName = userNameInput.value;
 
-
     choseTwoName.textContent = userName;
     choseTwoClass.textContent = charOptions.characterTwo.classType;
     choseTwoHealth.textContent = charOptions.characterTwo.classHealth;
@@ -339,7 +337,6 @@ document.getElementById("charThree-button").addEventListener("click", function (
     var choseThreeDef = document.getElementById("game-defense");
     var userNameInput = document.getElementById("name-input");
     var userName = userNameInput.value;
-
 
     choseThreeName.textContent = userName;
     choseThreeClass.textContent = charOptions.characterThree.classType;
