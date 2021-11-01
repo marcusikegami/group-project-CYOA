@@ -157,7 +157,7 @@ var boatNodes = [
                     },
                     {
                         text: "hatch",
-                        nextNode: 11,
+                        nextNode: 14,
                     },
                 ]
             },
@@ -169,6 +169,10 @@ var boatNodes = [
                     {
                         text: "room",
                         nextNode: 7,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14,
                     }
                 ]
             },
@@ -180,7 +184,12 @@ var boatNodes = [
                     {
                         text: "room",
                         nextNode: 7,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14,
                     }
+
                 ]
             },
             {
@@ -209,7 +218,7 @@ var boatNodes = [
                     },
                     {
                         text: "path",
-                        nextNode: 13,
+                        nextNode: 14,
                     }
                 ]
             },
@@ -221,17 +230,25 @@ var boatNodes = [
                     {
                         text: "beyond",
                         nextNode: 14,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14,
                     }
                 ]
             },
             {
                 id: 14,
                 music: "Igor Stravinsky",
-                text: "",
+                text: "END OF DEMONSTRATION",
                 options: [
                     {
                         text: "beyond",
                         nextNode: 14,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14
                     }
                 ]
             }
