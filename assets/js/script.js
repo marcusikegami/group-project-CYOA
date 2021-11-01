@@ -514,7 +514,6 @@ document.getElementById("save-button").addEventListener("click", function(){
     saveGame();
 });
 
-startChapter();
 
 function saveGame() {
 var player = JSON.stringify(playerObj);
