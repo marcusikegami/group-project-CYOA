@@ -519,8 +519,20 @@ function saveGame() {
 var player = JSON.stringify(playerObj);
 localStorage.setItem("Player Stats", player);
 
-var playerGrab = localStorage.getItem("Player Stats");
-JSON.parse(playerGrab);
-console.log(playerGrab);
+
+
+var lastLog = storylogEl.firstChild.textContent;
+localStorage.setItem("Last Log", lastLog);
 };
 
+
+function loadGame() {
+
+    var playerGrab = localStorage.getItem("Player Stats");
+JSON.parse(playerGrab);
+console.log(playerGrab);
+
+var storyLogGrab = localStorage.getItem("Last Log");
+console.log(storyLogGrab);
+    
+};
