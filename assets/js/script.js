@@ -141,7 +141,7 @@ var boatNodes = [
             {
                 id: 7,
                 music: "Wolfgang Amadeus Mozart",
-                text: "With your items collected a cursory glance around the room informs you that you have awoken in your chambers. At the WINDOW a orange sky rages in the fading evening. The unsteady FEELING of the rooms warbling and softly shifting motions recollects the information of having traveled on some vessel. Most notably the two exits of the access HATCH and the DOOR seem to have been jostled by some hitherto unknown presence. ",
+                text: "With your items collected a cursory glance around the room informs you that you have awoken in your chambers. At the WINDOW a orange sky rages in the fading evening. The unsteady FEELING of the rooms warbling and softly shifting motions recollects the information of having traveled on some vessel. Most notably the exit of the DOOR seems to have been jostled by some hitherto unknown presence. ",
                 options: [
                     {
                         text: "window",
@@ -154,10 +154,6 @@ var boatNodes = [
                     {
                         text: "door",
                         nextNode: 10,
-                    },
-                    {
-                        text: "hatch",
-                        nextNode: 11,
                     },
                 ]
             },
@@ -186,7 +182,7 @@ var boatNodes = [
             {
                 id: 10,
                 music: "Wolfgang Amadeus Mozart",
-                text: "The small room takes only a moment to cross. After a few unhurried strides you stare out the doorsways threshold. A small cargo hallway eerily dim and unkempt reaches out - clawing. You step back a moment, your breath quickening before your training reasserts itself. The comforting presence of the ROOM remains, but the path forward is best TREAD carefully.",
+                text: "The small room takes only a moment to cross. After a few unhurried strides you stare out the doorsways threshold. A small cargo hallway eerily dim and unkempt reaches out - clawing. You step back a moment, your breath quickening before your training reasserts itself. Of note, a small access HATCH yawns open in the rooms corner. The comforting presence of the ROOM remains, but the path forward is best TREAD carefully.",
                 options: [
                     {
                         text: "room",
@@ -195,7 +191,11 @@ var boatNodes = [
                     {
                         text: "tread",
                         nextNode: 12,
-                    }
+                    },
+                    {
+                        text: "hatch",
+                        nextNode: 11,
+                    },
                 ]
             },
             {
@@ -234,6 +234,33 @@ var boatNodes = [
                         nextNode: 14,
                     }
                 ]
+            },
+            {
+                id: 13,
+                music: "Johan Van Beethoven",
+                text: "Gingerly you climb down into the darker recesses of the ship. The dull metalic ring as your palms and shoes clamber down the iron bars. Eventually, in near complete darkness you reach a narrow causeway. Above you the dim light of the room is smothered in a loud boom as the hatch slams shut. FORWARD is your only option",
+                options: [
+                    {
+                        text: "forward",
+                        nextNode: 15,
+                    }
+                ]
+            },
+            {
+                id: 15,
+                music: "Johan Van Beethoven",
+                text: "The darkness is almost welcoming in its eagerness to consume you. Deep within the ship you move more on the basis of feel than sight. Gradually your limbs give out and you lie down for a moment. The darkness consuming you whole.",
+                options: [
+                    {
+                        text: "sleep",
+                        nextNode: 32,
+                    }
+                ]
+            },
+            {
+                id: 32,
+                music: "Johan Van Beethoven",
+                text: "A tale ends here. May it not be the last"
             }
 
         ];
