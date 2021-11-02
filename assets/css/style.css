@@ -73,3 +73,22 @@ color: white;
     font-weight: bold;
     font-size: x-large;
 }
+.start-title {
+    font-size: 100px;
+    font-family: Papyrus, fantasy;
+    font-weight: bolder;
+}
+
+#start-button {
+    font-family: Papyrus, fantasy;
+    font-weight: bold;
+}
+
+.card {
+    font-family: Papyrus, fantasy;
+    font-weight: bolder;
+}
+
+.button-row {
+    padding-bottom: 20px;
+}

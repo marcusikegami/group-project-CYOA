@@ -155,6 +155,7 @@ var boatNodes = [
                         text: "door",
                         nextNode: 10,
                     },
+
                 ]
             },
             {
@@ -165,6 +166,10 @@ var boatNodes = [
                     {
                         text: "room",
                         nextNode: 7,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14,
                     }
                 ]
             },
@@ -176,7 +181,12 @@ var boatNodes = [
                     {
                         text: "room",
                         nextNode: 7,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14,
                     }
+
                 ]
             },
             {
@@ -209,7 +219,7 @@ var boatNodes = [
                     },
                     {
                         text: "path",
-                        nextNode: 13,
+                        nextNode: 14,
                     }
                 ]
             },
@@ -221,17 +231,25 @@ var boatNodes = [
                     {
                         text: "beyond",
                         nextNode: 14,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14,
                     }
                 ]
             },
             {
                 id: 14,
                 music: "Igor Stravinsky",
-                text: "",
+                text: "END OF DEMONSTRATION",
                 options: [
                     {
                         text: "beyond",
                         nextNode: 14,
+                    },
+                    {
+                        text: "",
+                        nextNode: 14
                     }
                 ]
             },
@@ -329,7 +347,6 @@ document.getElementById("charOne-button").addEventListener("click", function () 
     var userNameInput = document.getElementById("name-input");
     var userName = userNameInput.value;
 
-    
     choseOneName.textContent = userName;
     choseOneClass.textContent = charOptions.characterOne.classType;
     choseOneHealth.textContent = charOptions.characterOne.classHealth;
@@ -348,7 +365,6 @@ document.getElementById("charTwo-button").addEventListener("click", function () 
     var userNameInput = document.getElementById("name-input");
     var userName = userNameInput.value;
 
-
     choseTwoName.textContent = userName;
     choseTwoClass.textContent = charOptions.characterTwo.classType;
     choseTwoHealth.textContent = charOptions.characterTwo.classHealth;
@@ -366,7 +382,6 @@ document.getElementById("charThree-button").addEventListener("click", function (
     var choseThreeDef = document.getElementById("game-defense");
     var userNameInput = document.getElementById("name-input");
     var userName = userNameInput.value;
-
 
     choseThreeName.textContent = userName;
     choseThreeClass.textContent = charOptions.characterThree.classType;
@@ -507,9 +522,9 @@ document.getElementById("text-input").addEventListener("keypress", function (eve
 
 function audio(text) {
 
+// test adding this comment to check for an error
 
-
-    fetch("http://api.voicerss.org/?key=667ae473f8df46b7984e35ffe16c18ea&hl=en-us&v=john&c=MP3&f=16khz_16bit_stereo&src=" + text,)
+    fetch("https://api.voicerss.org/?key=667ae473f8df46b7984e35ffe16c18ea&hl=en-us&v=john&c=MP3&f=16khz_16bit_stereo&src=" + text,)
     .then(response => {
         speech(response.url);
     })
@@ -546,8 +561,20 @@ function saveGame() {
 var player = JSON.stringify(playerObj);
 localStorage.setItem("Player Stats", player);
 
-var playerGrab = localStorage.getItem("Player Stats");
-JSON.parse(playerGrab);
-console.log(playerGrab);
+
+
+var lastLog = storylogEl.firstChild.textContent;
+localStorage.setItem("Last Log", lastLog);
 };
 
+
+function loadGame() {
+
+    var playerGrab = localStorage.getItem("Player Stats");
+JSON.parse(playerGrab);
+console.log(playerGrab);
+
+var storyLogGrab = localStorage.getItem("Last Log");
+console.log(storyLogGrab);
+    
+};
